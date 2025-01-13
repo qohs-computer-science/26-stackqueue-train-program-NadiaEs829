@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class Train {
     private String name, product, origin, destination;
     private int weight, miles;
@@ -16,6 +18,10 @@ public class Train {
         return name;            //is this necessary?
     }//end get method
 
+    public int getMiles(){
+        return miles;
+    }
+
     public String toString(){
         return name + product + origin + destination + weight + miles;      //add in a new line bewteen
     }//end toString
@@ -23,4 +29,5 @@ public class Train {
     public String getProduct(){
         return name + " containing " + product;
     }//end toString
+
 }//end class
