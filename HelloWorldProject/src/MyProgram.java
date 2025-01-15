@@ -13,12 +13,12 @@ import java.util.LinkedList;
 public class MyProgram {
 	public static int val = 0;
 	public static Stack <Object> trackZero = new Stack <Object>();
-			public Stack <Object> trackOne = new Stack <Object>();
-			public Queue <Object> trackA = new LinkedList<Object>();
-			public Queue <Object> trackB = new LinkedList<Object>();
-			public Queue <Object> trackC = new LinkedList<Object>();
-			public Queue <Object> trackD = new LinkedList<Object>();
-			//Train myT = new Train();
+	public static Stack <Object> trackOne = new Stack <Object>();
+	public Queue <Object> trackA = new LinkedList<Object>();
+	public Queue <Object> trackB = new LinkedList<Object>();
+	public Queue <Object> trackC = new LinkedList<Object>();
+	public Queue <Object> trackD = new LinkedList<Object>();
+	//Train myT = new Train();
 		public static void main(String[] args) {
 	
 			int limitTrackA = 100000, limitTrackB = 100000, limitTrackC = 100000;
@@ -31,16 +31,17 @@ public class MyProgram {
 				System.out.println(name);
 				Train myT = new Train(name, name, name, name, num, num);
 				trackZero.add(myT);
+				x.nextLine();
 		}
 		catch(Exception e)
 		{
 			System.out.println(e.getMessage());
 		}
 
-		for(){
+		for(int num = 0; 0 < trackZero.; num++){
 			if(myT.getMiles() > 700)
 				myT.miles = 100;
-				trackOne.add(myT);
+				trackOne.push(myT);
 		}//end for loop
 		int weightA = 0;
 		int weightB = 0;
@@ -68,11 +69,18 @@ public class MyProgram {
 		}//end for loop
 
 		if(weightA > limitTrackA){
+			System.out.println("DEPART");
 			//print toString
-			System.out.println(myT.toString());
+			System.out.println("(engine name***)" + " leaving for " myT.getDestination() + " with the following cars ");
+			//for(){
+				System.out.println(myT.getProduct());
+				trackA.remove(myT);
+			//}
 			//then remove from track A
 			trackA.remove(myT);
-		//do all for rest of tracks
+			
 		}//end if
+		
+
 	}//end main
 }//end class
