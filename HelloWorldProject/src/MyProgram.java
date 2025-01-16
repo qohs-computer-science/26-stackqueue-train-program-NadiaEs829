@@ -71,16 +71,36 @@ public class MyProgram {
 		if(weightA > limitTrackA){
 			System.out.println("DEPART");
 			//print toString
-			System.out.println("(engine name***)" + " leaving for " myT.getDestination() + " with the following cars ");
+			System.out.println("(engine name***)" + " leaving for Trenton with the following cars ");
 			//for(){
 				System.out.println(myT.getProduct());
 				trackA.remove(myT);
 			//}
-			//then remove from track A
-			trackA.remove(myT);
-			
 		}//end if
-		
+		if(weightB > limitTrackB){
+			System.out.println("DEPART");
+			//prints toString
+			System.out.println("(engine name***)" + " leaving for Charlotte with the following cars ");
+			//for(){
+				System.out.println(myT.getProduct());
+				trackA.remove(myT);
+			//}
+		}//end if
+
+		if(weightC > limitTrackC){
+			System.out.println("DEPART");
+			//print toString
+			System.out.println("(engine name***)" + " leaving for Baltimore with the following cars ");
+			//for(){
+				System.out.println(myT.getProduct());
+				trackA.remove(myT);
+			//}
+		}//end if
+		for(cars in trackD){
+			Systeem.out.println("DEPART"); 
+			System.out.println("(engine name***)" + "leaving for " + myT.getDetestination() + " with the following cars ");
+		}//end for loop
+		System.out.println("END");
 
 	}//end main
 }//end class

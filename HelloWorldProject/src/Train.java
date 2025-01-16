@@ -5,7 +5,8 @@ public class Train {
     private int weight, miles;
 
     //create Engine - create it as default
-    public Engine(){
+    public Engine(String n){
+        name = n;
 
     }
     //creates a train - edit it to be accommedted to the engine 
