@@ -5,10 +5,10 @@ public class Train {
     private int weight, miles;
 
     //create Engine - create it as default
-    public Engine(String n){
+  /*   public Engine(String n){
         name = n;
 
-    }
+   */ }
     //creates a train - edit it to be accommedted to the engine 
     public Train(String carName, String contains, String start, String end, int w, int m){
         name = carName;
@@ -20,7 +20,7 @@ public class Train {
     }//end constructor
 
     public String getName(){
-        return name;            //is this necessary?
+        return name;          
     }//end get method
 
     public int getMiles(){

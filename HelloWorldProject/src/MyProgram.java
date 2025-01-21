@@ -31,14 +31,16 @@ public class MyProgram {
 				System.out.println(name);
 				Train myT = new Train(name, name, name, name, num, num);
 				trackZero.push(myT);
-				x.nextLine();
+				//x.nextLine();
+				System.out.println(trackZero);
 		}
 		catch(Exception e)
 		{
 			System.out.println(e.getMessage());
 		}
-		//for(int num = 0; 0 < trackZero.; num++)
-		while(!trackZero.isEmpty()){
+
+			//for(int num = 0; 0 < trackZero.; num++)
+		/* while(!trackZero.isEmpty()){
 			if(myT.getMiles() > 700)
 				myT.miles = 100;
 				trackOne.push(myT);
@@ -105,6 +107,6 @@ public class MyProgram {
 		}
 		//}//end for loop
 		System.out.println("END");
-
+*/
 	}//end main
 }//end class
