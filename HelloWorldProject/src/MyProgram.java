@@ -11,13 +11,13 @@ import java.util.Queue;
 import java.util.LinkedList;
 
 public class MyProgram {
-	public static int val = 0;
 	public static Queue <Object> trackZero = new LinkedList<Object>();
 	public static Queue <Object> trackOne = new LinkedList<Object>();
 	public static Stack <Object> trackA = new Stack <Object>();
 	public static Stack <Object> trackB = new Stack <Object>();
 	public static Stack <Object> trackC = new Stack <Object>();
 	public static Stack <Object> trackD = new Stack <Object>();
+	public static Queue <Object> copyZero = trackZero;
 		public static void main(String[] args) {
 	
 			int limitTrackA = 100000, limitTrackB = 100000, limitTrackC = 100000;
@@ -32,6 +32,7 @@ public class MyProgram {
 					String destination = x.nextLine();
 					int weight = x.nextInt();
 					int miles = x.nextInt();
+
 					Train myT = new Train(name,product,origin,destination,weight,miles);
 					trackZero.add(myT);
 					x.nextLine();
@@ -41,43 +42,41 @@ public class MyProgram {
 		{
 			System.out.println(e.getMessage());
 		}
-
-		//for(int i = 0; i <= trackZero.size(); i++)
-		while(!trackZero.isEmpty()){
-			System.out.println((trackZero.remove()).toString());
+		
+		while(!copyZero.isEmpty()){
+			System.out.println((copyZero.remove()).toString());
 		}
-		//while(name.equals("END"))
-		//System.out.println(myT.getName());
 
-			//for(int num = 0; 0 < trackZero.; num++)
-		/* while(!trackZero.isEmpty()){
-			if(myT.getMiles() > 700)
-				myT.miles = 100;
-				trackOne.push(myT);
+		while(!trackZero.isEmpty()){
+			if(((Train) trackZero.peek()).getMiles() > 700)
+				trackOne.add((Train)trackZero.peek());
+				((Train)trackZero.peek()).setMiles(100);
+				trackZero.remove((Train)trackZero.peek());
 		}//end for loop
 		int weightA = 0;
 		int weightB = 0;
 		int weightC = 0;
-		//for()
+
 		while(!trackOne.isEmpty()){
-			if((trackOne.peek()).getDestination().equals("Trenton") && weightA < limitTrackA){
-				trackA.add(trackOne);
-				trackZero.remove(myT);
-				weightA += myT.weight;
+			if(((Train)trackOne.peek()).getDestination().equals("Trenton") && weightA < limitTrackA){
+				trackA.add((Train)trackOne);
+				trackZero.remove((Train)trackOne);
+				weightA += ((Train)trackOne).getWeight();
 			}//end if
-			else if(myT.destination.equals("Charlotte") && weightB < limitTrackB){
-				trackB.add(myT);
-				trackZero.remove(myT);
-				weightB += myT.weight;
+
+			else if(((Train)trackOne.peek()).getDestination().equals("Charlotte") && weightB < limitTrackB){
+				trackB.add((Train)trackOne);
+				trackZero.remove((Train)trackOne);
+				weightB += ((Train)trackOne).getWeight();
 			}//end else-if
-			else if(myT.destination.equals("Baltimore") && weightC < limitTrackC){
-				trackC.add(myT);
-				trackZero.remove(myT);
-				weightC += myT.weight;
+			else if(((Train)trackOne.peek()).getDestination().equals("Baltimore") && weightC < limitTrackC){
+				trackC.add((Train)trackOne);
+				trackZero.remove((Train)trackOne);
+				weightC += ((Train)trackOne).getWeight();
 			}//end else-if
 			else{
-				trackD.add(myT);
-				trackZero.remove(myT);
+				trackD.add((Train)trackOne);
+				trackZero.remove((Train)trackOne);
 			}//end else
 		}//while loop
 
@@ -85,38 +84,37 @@ public class MyProgram {
 			System.out.println("DEPARTING Track A");
 			//print toString
 			System.out.println("(engine name***)" + " leaving for Trenton with the following cars ");
-			//for(){
-				System.out.println(myT.getProduct());
-				trackA.remove(myT);
-			//}
+			while(!trackA.isEmpty()){
+				System.out.println(((Train)trackA.peek()).getProduct());
+				trackA.remove(((Train)trackA.peek()));
+			}//end while
 		}//end if
 		if(weightB > limitTrackB){
 			System.out.println("DEPARTING Track B");
 			//prints toString
 			System.out.println("(engine name***)" + " leaving for Charlotte with the following cars ");
-			//for(){
-				System.out.println(myT.getProduct());
-				trackA.remove(myT);
-			//}
+			while(!trackB.isEmpty()){
+				System.out.println(((Train)trackB.peek()).getProduct());
+				trackB.remove(((Train)trackB.peek()));
+			}//end while
 		}//end if
 
 		if(weightC > limitTrackC){
 			System.out.println("DEPARTING Track C");
 			//print toString
 			System.out.println("(engine name***)" + " leaving for Baltimore with the following cars ");
-			//for(){
-				System.out.println(myT.getProduct());
-				trackA.remove(myT);
-			//}
+			while(!trackC.isEmpty()){
+				System.out.println(((Train)trackC.peek()).getProduct());
+				trackC.remove(((Train)trackC.peek()));
+			}//end while
 		}//end if
 		//for(cars in trackD)
 		System.out.println("DEPARTING Track D");
-		System.out.println("(engine name***)" + "leaving for " + myT.getDetestination() + " with the following cars: ");
+		System.out.println("(engine name***)" + "leaving for " + ((Train)trackD.peek()).getDestination() + " with the following cars: ");
 		while(!trackD.isEmpty()){ 
-			System.out.println(trackD.remove());
-		}
+			System.out.println(trackD.remove((Train)trackD.peek()));
+		}//end while
 		//}//end for loop
 		System.out.println("END");
-*/
 	}//end main
 }//end class
