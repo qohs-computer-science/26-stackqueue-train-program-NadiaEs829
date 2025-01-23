@@ -12,13 +12,12 @@ import java.util.LinkedList;
 
 public class MyProgram {
 	public static int val = 0;
-	public static Stack <Object> trackZero = new Stack <Object>();
-	public static Stack <Object> trackOne = new Stack <Object>();
-	public static Queue <Object> trackA = new LinkedList<Object>();
-	public static Queue <Object> trackB = new LinkedList<Object>();
-	public static Queue <Object> trackC = new LinkedList<Object>();
-	public static Queue <Object> trackD = new LinkedList<Object>();
-	//Train myT = new Train();
+	public static Queue <Object> trackZero = new LinkedList<Object>();
+	public static Queue <Object> trackOne = new LinkedList<Object>();
+	public static Stack <Object> trackA = new Stack <Object>();
+	public static Stack <Object> trackB = new Stack <Object>();
+	public static Stack <Object> trackC = new Stack <Object>();
+	public static Stack <Object> trackD = new Stack <Object>();
 		public static void main(String[] args) {
 	
 			int limitTrackA = 100000, limitTrackB = 100000, limitTrackC = 100000;
@@ -26,18 +25,29 @@ public class MyProgram {
 			try{
 				File f = new File("HelloWorldProject/src/data.txt");
 				x = new Scanner (f);
-				String name = x.nextLine();
-				int num = x.nextInt();
-				System.out.println(name);
-				Train myT = new Train(name, name, name, name, num, num);
-				trackZero.push(myT);
-				//x.nextLine();
-				System.out.println(trackZero);
+				while(x.hasNext()){
+					String name = x.nextLine();
+					String product = x.nextLine();
+					String origin = x.nextLine();
+					String destination = x.nextLine();
+					int weight = x.nextInt();
+					int miles = x.nextInt();
+					Train myT = new Train(name,product,origin,destination,weight,miles);
+					trackZero.add(myT);
+					x.nextLine();
+				}//end while loop
 		}
 		catch(Exception e)
 		{
 			System.out.println(e.getMessage());
 		}
+
+		//for(int i = 0; i <= trackZero.size(); i++)
+		while(!trackZero.isEmpty()){
+			System.out.println((trackZero.remove()).toString());
+		}
+		//while(name.equals("END"))
+		//System.out.println(myT.getName());
 
 			//for(int num = 0; 0 < trackZero.; num++)
 		/* while(!trackZero.isEmpty()){

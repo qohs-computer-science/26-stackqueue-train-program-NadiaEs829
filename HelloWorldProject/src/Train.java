@@ -1,15 +1,11 @@
-import java.util.Stack;
-
 public class Train {
-    private String name, product, origin, destination;
+    private String name, product, origin, destination; 
     private int weight, miles;
 
-    //create Engine - create it as default
-  /*   public Engine(String n){
-        name = n;
+    public Train(){
 
-   */ }
-    //creates a train - edit it to be accommedted to the engine 
+    }
+    //create Engine - create it as default
     public Train(String carName, String contains, String start, String end, int w, int m){
         name = carName;
         product = contains;
@@ -32,7 +28,7 @@ public class Train {
     }
 
     public String toString(){ //remember to change as well
-        return name + product + origin + destination + weight + miles;      //add in a new line bewteen
+        return name + "\n" + product + "\n" + origin + "\n"+ destination + "\n" + weight + "\n" + miles + "\n";
     }//end toString
 
     public String getProduct(){
